@@ -57,7 +57,7 @@ async function getFilesRecursively(dir, instanceName) {
       const fileHash = await getFileHash(filePath);
 
       const relativePath = path.relative(path.join(extractedDir, instanceName), filePath);
-      const url = `http://localhost:${PORT}/download/${instanceName}/${relativePath}`;
+      const url = `https://estoesincreiblecarpin.onrender.com/download/${instanceName}/${relativePath}`;
 
       filesList.push({
         url: url,
