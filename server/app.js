@@ -114,7 +114,7 @@ app.listen(PORT, async () => {
   if (!fs.existsSync(extractedDir)) fs.mkdirSync(extractedDir);
 
   // Descargar el archivo ZIP
-  const zipUrl = 'https://www.dropbox.com/scl/fi/m4bsg6j2sk9sc2mxg22hw/carpinCraftPiola.zip?rlkey=22hmetizkars0zmlm4ox3lrjv&st=b1pfrglw&dl=1';
+  const zipUrl = 'https://www.dropbox.com/scl/fi/q7jeicwctipa9izoax8c5/carpinCraftPiola.zip?rlkey=5oz1z2mkdeot84h4padzeczxf&st=b9nq8gqd&dl=1';
   const zipFilePath = path.join(instancesDir, 'carpinCraftPiola.zip');
 
   try {
