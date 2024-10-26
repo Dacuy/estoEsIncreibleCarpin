@@ -105,16 +105,13 @@ app.get('/instances/:instanceName', (req, res) => {
   }
 });
 
-// Procesar todos los archivos ZIP al iniciar el servidor
 app.listen(PORT, async () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 
-  // Crear los directorios si no existen
   if (!fs.existsSync(instancesDir)) fs.mkdirSync(instancesDir);
   if (!fs.existsSync(extractedDir)) fs.mkdirSync(extractedDir);
 
-  // Descargar el archivo ZIP
-  const zipUrl = 'https://www.dropbox.com/scl/fi/q7jeicwctipa9izoax8c5/carpinCraftPiola.zip?rlkey=5oz1z2mkdeot84h4padzeczxf&st=b9nq8gqd&dl=1';
+  const zipUrl = 'https://www.dropbox.com/scl/fi/qjy67xi813vpnrxh2npu5/carpinCraftPiola.zip?rlkey=gcobyd9blxqiug0gai3uwf89t&st=5d6sw6p8&dl=1';
   const zipFilePath = path.join(instancesDir, 'carpinCraftPiola.zip');
 
   try {
