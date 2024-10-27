@@ -104,7 +104,25 @@ app.get('/instances/:instanceName', (req, res) => {
     res.status(404).json({ error: "Instancia no encontrada" });
   }
 });
+app.get('/news', (req, res) => {
+  const newsPath = path.join(__dirname, 'news.json');
+  
+  fs.readFile(newsPath, 'utf8', (err, data) => {
+      if (err) {
+          console.error("Error al leer news.json:", err);
+          res.status(500).json({ error: 'Error al obtener las noticias' });
+          return;
+      }
 
+      try {
+          const news = JSON.parse(data);
+          res.json(news);
+      } catch (parseError) {
+          console.error("Error al parsear news.json:", parseError);
+          res.status(500).json({ error: 'Error al procesar las noticias' });
+      }
+  });
+});
 app.listen(PORT, async () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 
